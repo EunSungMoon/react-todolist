@@ -1,0 +1,81 @@
+// #A477BD
+// #2C2C2E
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  #root {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 600px;
+    background: #2c2c2e;
+    top: 100px;
+    position: absolute;
+    border-radius: 10px;
+
+    header {
+      .title {
+        h1 {
+          color: #a477bd;
+          text-align: center;
+        }
+      }
+    }
+
+    main {
+      input {
+        border: none;
+        height: 24px;
+        background: #2c2c2e;
+        border-bottom: 2px solid white;
+        color: white;
+      }
+      .addBtn {
+        margin-left: 10px;
+        background: #a477bd;
+        border: none;
+        border-radius: 7px;
+        width: 55px;
+        height: 30px;
+        color: white;
+      }
+      .todoList {
+        ul {
+          list-style-type: none;
+          color: white;
+          padding: 0;
+
+          li {
+            display: flex;
+            margin-bottom: 20px;
+            .label{
+              content: '';
+              width: 20px;
+              height: 20px;
+              border: 3px solid #A477BD;
+              border-radius: 100%;
+              margin-right: 7px;
+            }
+            .todoText {
+              width: 182px;
+            }
+
+            .delBtn {
+              content: url('trashcan.png');
+              width: 20px;
+              height: 25px;
+
+              &:hover{
+                background-color: #A477BD;
+                border-radius: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

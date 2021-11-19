@@ -18,17 +18,29 @@ function TodoInsert() {
     setTodo("")
   }
 
+  function deleteTodo(id) {
+    let updatedTodos = [...todos].filter((todo) => todo.id !== id)
+    setTodos(updatedTodos)
+  }
+
   return (
     <React.Fragment>
       <section>
         <form onSubmit={handleSubmit}>
           <input type="text" name="list" placeholder="write to do" onChange={e => setTodo(e.target.value)} value={todo} />
-          <button type="submit">Add Todo</button>
+          <button className="addBtn" type="submit">입력</button>
         </form>
       </section>
       <section>
-        <div>
-          {todos.map((todo) => <div>{todo.text}</div>)}
+        <div className="todoList">
+          <ul>
+            {todos.map((todo) =>
+              <li key={todo.id}>
+                <div className="label"></div>
+                <span className="todoText">{todo.text}</span>
+                <div className="delBtn" onClick={(deleteTodo(todo.id))}></div>
+              </li>)}
+          </ul>
         </div>
       </section>
     </React.Fragment>
