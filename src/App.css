@@ -1,12 +1,94 @@
-header .title h1 {
-  color: #A477BD;
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-main .addBtn {
-  background: #A477BD;
+body #root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 500px;
+  min-height: 600px;
+  background: #2c2c2e;
+  top: 50px;
+  position: absolute;
+  border-radius: 10px;
+}
+
+body #root .App {
+  margin-bottom: 10px;
+}
+
+body #root .App header .title h1 {
+  color: #a477bd;
+  text-align: center;
+}
+
+body #root .App main .addList {
   border: none;
-  border-radius: 3px;
-  width: 50px;
+  height: 24px;
+  background: #2c2c2e;
+  border-bottom: 2px solid white;
+  color: white;
+}
+
+body #root .App main .addBtn {
+  margin-left: 10px;
+  background: #a477bd;
+  border: none;
+  border-radius: 7px;
+  width: 55px;
+  height: 30px;
+  color: white;
+}
+
+body #root .App main .todoList ul {
+  list-style-type: none;
+  color: white;
+  padding: 0;
+}
+
+body #root .App main .todoList ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+body #root .App main .todoList ul li input[type="checkbox"] {
+  display: none;
+}
+
+body #root .App main .todoList ul li .label {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 3px solid #a477bd;
+  border-radius: 100%;
+  margin-right: 7px;
+}
+
+body #root .App main .todoList ul li .todoText {
+  width: 182px;
+}
+
+body #root .App main .todoList ul li .delBtn {
+  content: url("trashcan.png");
+  width: 20px;
   height: 25px;
+}
+
+body #root .App main .todoList ul li .delBtn:hover {
+  background-color: #a477bd;
+  border-radius: 3px;
 }
 /*# sourceMappingURL=App.css.map */

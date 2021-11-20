@@ -21,13 +21,24 @@ function TodoInsert() {
   function deleteTodo(id) {
     let updatedTodos = [...todos].filter((todo) => todo.id !== id)
     setTodos(updatedTodos)
+    console.log('test');
+  }
+
+  function toggleComplete(id) {
+    let updatedTodos = [...todos].map((todo) => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed
+      } return todo
+    })
+    setTodos(updatedTodos)
+    console.log('test');
   }
 
   return (
     <React.Fragment>
       <section>
         <form onSubmit={handleSubmit}>
-          <input type="text" name="list" placeholder="write to do" onChange={e => setTodo(e.target.value)} value={todo} />
+          <input className= "addList" type="text" name="list" placeholder="write to do" onChange={e => setTodo(e.target.value)} value={todo} />
           <button className="addBtn" type="submit">입력</button>
         </form>
       </section>
@@ -36,9 +47,11 @@ function TodoInsert() {
           <ul>
             {todos.map((todo) =>
               <li key={todo.id}>
-                <div className="label"></div>
+                <input type="checkbox"/>
+                <label className="label" onClick={() => toggleComplete(todo.id)} checked={todo.completed}></label>
                 <span className="todoText">{todo.text}</span>
-                <div className="delBtn" onClick={(deleteTodo(todo.id))}></div>
+                <div className="delBtn" onClick={() => deleteTodo(todo.id)}></div>
+                {/* <button onClick={()=>setTodoEditing(todo.id)}>Edit Todo</button> */}
               </li>)}
           </ul>
         </div>
